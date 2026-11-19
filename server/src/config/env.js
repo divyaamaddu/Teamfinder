@@ -1,7 +1,7 @@
 import dotenv from "dotenv";
 dotenv.config();
 
-const required = ["PORT"];
+const required = ["PORT", "DATABASE_URL"];
 
 for (const key of required) {
   if (!process.env[key]) {
@@ -11,4 +11,5 @@ for (const key of required) {
 
 export const env = {
   port: process.env.PORT,
+  databaseUrl: process.env.DATABASE_URL,
 };
