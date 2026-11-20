@@ -1,44 +1,50 @@
-# TeamFinder: Product Requirements (PRD)
+# TeamFinder - PRD
 
-## 1. Problem
-Students usually form hackathon teams with friends they already know. These teams often have the same skills, and no one has experience with the hackathon's theme. Existing teammate finders list individual profiles and leave the student to read and compare them.
+## What problem I'm solving
+When students join hackathons they mostly make teams with their friends. Most of the time everyone in the team has the same skills, like all of them know React but nobody knows backend. Also nobody in the team has worked on something related to the hackathon theme.
 
-## 2. Users
-- **Student seeking a team:** wants to join a hackathon and find teammates whose skills complement theirs.
-- **Student already in a team:** wants to find a missing skill.
+The teammate finder apps that already exist just show a list of profiles. The student has to open every profile and read it, which takes a lot of time.
 
-## 3. Goal
-Help a student pick a hackathon, see who else is looking for a team, and get a ranked list of the people who would complement them best, with evidence from their resumes.
+## Who will use it
+- A student who wants to join a hackathon and needs teammates.
+- A student who already has a team but is missing one skill.
 
-## 4. Core user flow
-1. The student registers and logs in.
-2. The student uploads a resume (planned).
-3. The student picks a hackathon and marks "looking for a team".
-4. The student sees who else is looking for a team in that hackathon.
-5. The app reads each resume against the hackathon theme and ranks candidates (planned).
-6. The student sends a team request, and the other student accepts or rejects it (planned).
+## What I want to build
+A student picks a hackathon and says "I'm looking for a team". They can then see who else is looking for a team in the same hackathon. Later the app will read their resumes and show who would be the best match, with proof from the resume.
 
-## 5. Main entities
-- **User:** a student with a name, an email and a password.
-- **Hackathon:** an event with a name, theme and start date.
-- **Interest:** a link saying a user is looking for a team in a given hackathon.
-- **Resume, Skill, Team, Request:** planned.
+## How it works (the flow)
+1. Student registers and logs in.
+2. Student uploads a resume (not built yet).
+3. Student picks a hackathon and clicks "looking for a team".
+4. Student sees the other students who are also looking.
+5. The app reads the resumes and ranks the people (not built yet).
+6. Student sends a team request and the other person accepts or rejects (not built yet).
 
-## 6. Feature status
+## Main things in the system
+- User: a student, with name, email and password.
+- Hackathon: name, theme and start date.
+- Interest: says that a user is looking for a team in a hackathon.
+- Resume, Skill, Team and Request: I will add these later.
+
+## What is done and what is not
 | Feature | Status |
 |---|---|
-| Health check endpoint | Built |
-| Environment configuration | Built |
-| Users, hackathons, interests (database and API) | Planned (next) |
-| Seekers list for a hackathon | Planned (next) |
-| Login with JWT | Planned |
-| Resume parsing with an LLM | Planned |
-| Ranked matches with evidence | Planned |
-| Team requests | Planned |
+| Health check route | Done |
+| Environment variable setup | Done |
+| Users, hackathons and interests tables | Done |
+| List hackathons and see one hackathon | Done |
+| Mark and remove "looking for a team" | Done |
+| Seekers list for a hackathon | Done |
+| Register and login with JWT | Next |
+| Resume reading using LLM | Later |
+| Ranked matches | Later |
+| Team requests | Later |
 
-## 7. Out of scope (for now)
-Payments, mobile app, video calls, and private or scanned-image resumes.
+Note: right now the app finds the user with a temporary x-user-id header. This is not secure. I will replace it with proper login using JWT.
 
-## 8. Success measures
-- A student can find teammates for a hackathon in under 2 minutes.
-- Every match shows evidence from the resume.
+## What I am not building right now
+Payments, mobile app, video calls, and scanned (image) resumes.
+
+## How I will know it works
+- A student can find teammates for a hackathon in a couple of minutes.
+- Every match shows a line from the resume as proof.
