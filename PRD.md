@@ -21,7 +21,7 @@ A student picks a hackathon and says "I'm looking for a team". They can then see
 6. Student sends a team request and the other person accepts or rejects (not built yet).
 
 ## Main things in the system
-- User: a student, with name, email and password.
+- User: a student, with name, email and password (stored as a hash).
 - Hackathon: name, theme and start date.
 - Interest: says that a user is looking for a team in a hackathon.
 - Resume, Skill, Team and Request: I will add these later.
@@ -35,12 +35,11 @@ A student picks a hackathon and says "I'm looking for a team". They can then see
 | List hackathons and see one hackathon | Done |
 | Mark and remove "looking for a team" | Done |
 | Seekers list for a hackathon | Done |
-| Register and login with JWT | Next |
+| Register and login with password hashing and JWT | Done |
+| React frontend | Next |
 | Resume reading using LLM | Later |
 | Ranked matches | Later |
 | Team requests | Later |
-
-Note: right now the app finds the user with a temporary x-user-id header. This is not secure. I will replace it with proper login using JWT.
 
 ## What I am not building right now
 Payments, mobile app, video calls, and scanned (image) resumes.
