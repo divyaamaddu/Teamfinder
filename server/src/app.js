@@ -3,6 +3,7 @@ import cors from "cors";
 import requestLogger from "./middleware/requestLogger.js";
 import notFound from "./middleware/notFound.js";
 import errorHandler from "./middleware/errorHandler.js";
+import authRoutes from "./routes/auth.routes.js";
 import hackathonRoutes from "./routes/hackathons.routes.js";
 
 const app = express();
@@ -15,6 +16,7 @@ app.get("/api/v1/health", (req, res) => {
   res.status(200).json({ status: "ok" });
 });
 
+app.use("/api/v1/auth", authRoutes);
 app.use("/api/v1/hackathons", hackathonRoutes);
 
 app.use(notFound);
